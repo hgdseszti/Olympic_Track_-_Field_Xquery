@@ -1,4 +1,4 @@
-(: Ez a legkérdezés kiírja a részt vevő helyszínek nevét :)
+(: Ez a legkérdezés kiírja a részt vevő helyszínek nevét. :)
 
 xquery version "3.1";
 
