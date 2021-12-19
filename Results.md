@@ -160,3 +160,112 @@ return map{'2016': fn:sum($filtered-array)}
 { 
         "2016": 14 }
 ```
+
+**5. lekérdezés:**
+
+A lekérdezés visszaadja, hogy az egyes helyszíneken hány arany érmet szereztek összesen.
+
+```xquery
+xquery version "3.1";
+
+declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization";
+declare namespace map = "http://www.w3.org/2005/xpath-functions/map";
+declare namespace array = "http://www.w3.org/2005/xpath-functions/array";
+
+declare option output:method "json";
+declare option output:indent "yes";
+
+declare function local:get-games() {
+    let $json := fn:json-doc("./olympic_results.json")?*
+    let $games :=  $json?games?*
+    return $games
+};
+
+declare function local:get-gold-medal-count($location) {
+    let $result := count(local:get-games()[?location = $location and ?results(1)?medal = "G"])
+    return $result
+};
+
+let $locations := array { fn:distinct-values(local:get-games()?location) }
+
+return array:for-each($locations, function($location) {
+    map {
+        "location": $location,
+        "gold-medals": local:get-gold-medal-count($location)
+    }
+})
+```
+**Eredmény:**
+```json
+[
+        { 
+            "gold-medals": 47,
+            "location": "Rio" },
+        { 
+            "gold-medals": 46,
+            "location": "Beijing" },
+        { 
+            "gold-medals": 45,
+            "location": "Sydney" },
+        { 
+            "gold-medals": 41,
+            "location": "Barcelona" },
+        { 
+            "gold-medals": 60,
+            "location": "Los Angeles" },
+        { 
+            "gold-medals": 32,
+            "location": "Montreal" },
+        { 
+            "gold-medals": 25,
+            "location": "Mexico" },
+        { 
+            "gold-medals": 33,
+            "location": "Rome" },
+        { 
+            "gold-medals": 31,
+            "location": "Helsinki" },
+        { 
+            "gold-medals": 22,
+            "location": "Berlin" },
+        { 
+            "gold-medals": 19,
+            "location": "Amsterdam" },
+        { 
+            "gold-medals": 14,
+            "location": "Antwerp" },
+        { 
+            "gold-medals": 83,
+            "location": "London" },
+        { 
+            "gold-medals": 58,
+            "location": "Athens" },
+        { 
+            "gold-medals": 43,
+            "location": "Atlanta" },
+        { 
+            "gold-medals": 37,
+            "location": "Moscow" },
+        { 
+            "gold-medals": 27,
+            "location": "Munich" },
+        { 
+            "gold-medals": 34,
+            "location": "Tokyo" },
+        { 
+            "gold-medals": 19,
+            "location": "Melbourne \/ Stockholm" },
+        { 
+            "gold-medals": 37,
+            "location": "Paris" },
+        { 
+            "gold-medals": 20,
+            "location": "Stockholm" },
+        { 
+            "gold-medals": 17,
+            "location": "St Louis" },
+        { 
+            "gold-medals": 6,
+            "location": "Seoul" }
+    ]
+```
