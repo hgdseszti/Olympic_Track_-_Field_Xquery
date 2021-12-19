@@ -190,8 +190,8 @@ let $locations := array { fn:distinct-values(local:get-games()?location) }
 
 return array:for-each($locations, function($location) {
     map {
-        "location": $location,
-        "gold-medals": local:get-gold-medal-count($location)
+        "Location": $location,
+        "Gold_medals": local:get-gold-medal-count($location)
     }
 })
 ```
@@ -199,73 +199,73 @@ return array:for-each($locations, function($location) {
 ```json
 [
         { 
-            "gold-medals": 47,
-            "location": "Rio" },
+            "Location": "Rio",
+            "Gold_medals": 47 },
         { 
-            "gold-medals": 46,
-            "location": "Beijing" },
+            "Location": "Beijing",
+            "Gold_medals": 46 },
         { 
-            "gold-medals": 45,
-            "location": "Sydney" },
+            "Location": "Sydney",
+            "Gold_medals": 45 },
         { 
-            "gold-medals": 41,
-            "location": "Barcelona" },
+            "Location": "Barcelona",
+            "Gold_medals": 41 },
         { 
-            "gold-medals": 60,
-            "location": "Los Angeles" },
+            "Location": "Los Angeles",
+            "Gold_medals": 60 },
         { 
-            "gold-medals": 32,
-            "location": "Montreal" },
+            "Location": "Montreal",
+            "Gold_medals": 32 },
         { 
-            "gold-medals": 25,
-            "location": "Mexico" },
+            "Location": "Mexico",
+            "Gold_medals": 25 },
         { 
-            "gold-medals": 33,
-            "location": "Rome" },
+            "Location": "Rome",
+            "Gold_medals": 33 },
         { 
-            "gold-medals": 31,
-            "location": "Helsinki" },
+            "Location": "Helsinki",
+            "Gold_medals": 31 },
         { 
-            "gold-medals": 22,
-            "location": "Berlin" },
+            "Location": "Berlin",
+            "Gold_medals": 22 },
         { 
-            "gold-medals": 19,
-            "location": "Amsterdam" },
+            "Location": "Amsterdam",
+            "Gold_medals": 19 },
         { 
-            "gold-medals": 14,
-            "location": "Antwerp" },
+            "Location": "Antwerp",
+            "Gold_medals": 14 },
         { 
-            "gold-medals": 83,
-            "location": "London" },
+            "Location": "London",
+            "Gold_medals": 83 },
         { 
-            "gold-medals": 58,
-            "location": "Athens" },
+            "Location": "Athens",
+            "Gold_medals": 58 },
         { 
-            "gold-medals": 43,
-            "location": "Atlanta" },
+            "Location": "Atlanta",
+            "Gold_medals": 43 },
         { 
-            "gold-medals": 37,
-            "location": "Moscow" },
+            "Location": "Moscow",
+            "Gold_medals": 37 },
         { 
-            "gold-medals": 27,
-            "location": "Munich" },
+            "Location": "Munich",
+            "Gold_medals": 27 },
         { 
-            "gold-medals": 34,
-            "location": "Tokyo" },
+            "Location": "Tokyo",
+            "Gold_medals": 34 },
         { 
-            "gold-medals": 19,
-            "location": "Melbourne \/ Stockholm" },
+            "Location": "Melbourne \/ Stockholm",
+            "Gold_medals": 19 },
         { 
-            "gold-medals": 37,
-            "location": "Paris" },
+            "Location": "Paris",
+            "Gold_medals": 37 },
         { 
-            "gold-medals": 20,
-            "location": "Stockholm" },
+            "Location": "Stockholm",
+            "Gold_medals": 20 },
         { 
-            "gold-medals": 17,
-            "location": "St Louis" },
+            "Location": "St Louis",
+            "Gold_medals": 17 },
         { 
-            "gold-medals": 6,
-            "location": "Seoul" }
+            "Location": "Seoul",
+            "Gold_medals": 6 }
     ]
 ```
