@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"> 
+    <xs:element name="EVENTS">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="EVENT" type="eventType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="ALL" type="xs:nonNegativeInteger" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="eventType">
+        <xs:sequence>
+            <xs:element name="GAME" type="gameType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="NAME" type="xs:string"/>
+    </xs:complexType>
+    
+    <xs:complexType name="gameType">
+        <xs:sequence>
+            <xs:element name="PLAYER" type="playerType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="YEAR" type="xs:integer"/>
+        <xs:attribute name="LOCATION" type="xs:string"/>
+    </xs:complexType>
+    
+    <xs:complexType name="playerType">
+        <xs:attribute name="NAME" type="xs:string"/>
+        <xs:attribute name="RESULT" type="xs:string"/>
+        <xs:attribute name="NATIONALITY" type="xs:string"/>
+    </xs:complexType>
+    
+</xs:schema>

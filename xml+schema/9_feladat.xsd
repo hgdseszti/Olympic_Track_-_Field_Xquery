@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="USAIN">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="COUNT" maxOccurs="1" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="GAME" 
+                                type="gameType"
+                                minOccurs="1" 
+                                maxOccurs="unbounded"
+                            />
+                        </xs:sequence>
+                        <xs:attribute name="ALL" 
+                            type="xs:nonNegativeInteger"
+                            use="required"
+                        />
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="gameType">
+        <xs:sequence>
+            <xs:element name="RESULT"
+                        type="resultType"
+                        minOccurs="1" 
+                        maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="LOCATION" type="xs:string" use="required"/>
+        <xs:attribute name="YEAR" type="xs:integer" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="resultType">
+        <xs:attribute name="NAME" type="usainType"/>
+        <xs:attribute name="RESULT" type="xs:string" />
+        <xs:attribute name="MEDAL" type="xs:string" />
+    </xs:complexType>
+    
+    <xs:simpleType name="usainType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Usain BOLT"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

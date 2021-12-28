@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <xs:element name="PLAYERS">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PLAYER" minOccurs="0" maxOccurs="unbounded" >
+                    <xs:complexType>
+                        <xs:attribute name="NAME" type="xs:string"/>
+                        <xs:attribute name="COUNT" type="xs:integer"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="ALL" type="xs:nonNegativeInteger" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>
