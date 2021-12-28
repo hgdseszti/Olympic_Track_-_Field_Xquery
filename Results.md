@@ -1,11 +1,13 @@
 # Olympic_Track_and_Field_Xquery
 ### Olympic Track & Field Results (Kaggle) - https://www.kaggle.com/jayrav13/olympic-track-field-results
 
+
 #### XQuery lekérdezések
+
 
 **1. lekérdezés:**
 
-A lekérdezés visszaadja az olimpiai játékok számát 1896 és 2016 között.
+A lekérdezés visszaadja az olimpiai játékok számát 1896 és 2016 között:
 
 ```xquery
 xquery version "3.1";
@@ -23,6 +25,8 @@ return fn:count($json?games)
 ```json
 47
 ```
+Látható, hogy 47 darab olimpiai játék volt.
+
 
 **2. lekérdezés:**
 
