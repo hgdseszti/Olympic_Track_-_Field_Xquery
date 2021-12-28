@@ -292,6 +292,8 @@ return array:for-each($locations, function($location) {
 
 A lekérdezés egy XML dokumentumot állít elő, amely abc sorrendben tartalmazza az összes versenyző nevét, aki érmet szerzett valaha az olimpián.
 
+Kapcsolódó [XML Séma](./xml+schema/6_feladat.xsd)
+
 ```xquery
 xquery version "3.1";
 
@@ -2009,6 +2011,8 @@ return validate {document {
 
 A lekérdezés egy olyan XML dokumentumot állít elő, amely kilistázza, hogy melyik versenyző, hányszor
 vett részt az olimpián.
+
+Kapcsolódó [XML Séma](./xml+schema/7_feladat.xsd)
 
 ```xquery
 xquery version "3.1";
@@ -3728,6 +3732,8 @@ return validate {document {
 
 A lekérdezés egy olyan XML dokumentumot állít elő, amely visszaadja a női versenyszámok nevét, illetve a versenyszám aranyérmesének adatait, olimpiánként.
 
+Kapcsolódó [XML Séma](./xml+schema/8_feladat.xsd)
+
 ```xquery
 xquery version "3.1";
 
@@ -4593,6 +4599,8 @@ return validate {document {
 
 A lekérdezés egy olyan XML dokumentumot állít elő, amely visszaadja, hogy Usain Bolt melyik olimpián szerepelt és milyen eredménnyel.
 
+Kapcsolódó [XML Séma](./xml+schema/9_feladat.xsd)
+
 ```xquery
 xquery version "3.1";
 
@@ -4717,5 +4725,6 @@ return document {
     </html>
 }
 ```
-## Képernyőmentések
+## Képernyőmentés
 Desktop:
+![FullScreen](./html/London.PNG)
