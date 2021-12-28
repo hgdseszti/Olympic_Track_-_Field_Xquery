@@ -4727,4 +4727,4 @@ return document {
 ```
 ## Képernyőmentés
 Desktop:
-![FullScreen](./html/London.PNG)
+![FullScreen](./html/London.png)
