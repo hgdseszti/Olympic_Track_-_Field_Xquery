@@ -7,7 +7,7 @@
 
 **1. lekérdezés:**
 
-A lekérdezés visszaadja az olimpiai játékok számát 1896 és 2016 között:
+A lekérdezés visszaadja az olimpiai játékok számát 1896 és 2016 között.
 
 ```xquery
 xquery version "3.1";
